@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="calculadora">
+      <div class="pantalla">
+        <div class="operacion" id="operacion"></div>
+        <div class="resultado" id="resultado">0</div>
+      </div>
+
+      <div class="botones">
+        <!-- Fila 1 -->
+        <button class="limpiar" onclick="limpiarTodo()">AC</button>
+        <button class="modo" id="modoBtn" onclick="cambiarModo()">DEG</button>
+        <button class="funcion" onclick="agregarFuncion('Math.PI')">π</button>
+        <button class="funcion" onclick="agregarFuncion('Math.E')">e</button>
+        <button class="historial-btn" onclick="toggleHistorial()">
+          Historial
+        </button>
+
+        <!-- Fila 2 -->
+        <button class="funcion" onclick="agregarFuncion('(')">(</button>
+        <button class="funcion" onclick="agregarFuncion(')')">)</button>
+        <button class="funcion" onclick="agregarFuncion('^')">x^y</button>
+        <button class="funcion" onclick="agregarFuncion('Math.sqrt(')">
+          √
+        </button>
+        <button class="funcion" onclick="agregarFuncion('!')">x!</button>
+
+        <!-- Fila 3 -->
+        <button class="funcion" onclick="calcularFuncion('Math.sin')">
+          sin
+        </button>
+        <button class="funcion" onclick="calcularFuncion('Math.cos')">
+          cos
+        </button>
+        <button class="funcion" onclick="calcularFuncion('Math.tan')">
+          tan
+        </button>
+        <button class="funcion" onclick="agregarFuncion('Math.log10(')">
+          log
+        </button>
+        <button class="funcion" onclick="agregarFuncion('Math.log(')">
+          ln
+        </button>
+
+        <!-- Fila 4 -->
+        <button class="funcion" onclick="calcularFuncion('Math.asin')">
+          sin⁻¹
+        </button>
+        <button class="funcion" onclick="calcularFuncion('Math.acos')">
+          cos⁻¹
+        </button>
+        <button class="funcion" onclick="calcularFuncion('Math.atan')">
+          tan⁻¹
+        </button>
+        <button class="funcion" onclick="agregarFuncion('Math.pow(10,')">
+          10^x
+        </button>
+        <button class="funcion" onclick="agregarFuncion('Math.exp(')">
+          e^x
+        </button>
+
+        <!-- Fila 5 -->
+        <button class="memoria" onclick="memoria('MC')">MC</button>
+        <button class="memoria" onclick="memoria('MR')">MR</button>
+        <button class="memoria" onclick="memoria('M+')">M+</button>
+        <button class="memoria" onclick="memoria('M-')">M-</button>
+        <button class="funcion" onclick="agregarFuncion('Math.abs(')">
+          |x|
+        </button>
+
+        <!-- Fila 6 -->
+        <button class="numero" onclick="agregarNumero('7')">7</button>
+        <button class="numero" onclick="agregarNumero('8')">8</button>
+        <button class="numero" onclick="agregarNumero('9')">9</button>
+        <button class="operador" onclick="agregarOperador('/')">÷</button>
+        <button class="funcion" onclick="agregarFuncion('%')">%</button>
+
+        <!-- Fila 7 -->
+        <button class="numero" onclick="agregarNumero('4')">4</button>
+        <button class="numero" onclick="agregarNumero('5')">5</button>
+        <button class="numero" onclick="agregarNumero('6')">6</button>
+        <button class="operador" onclick="agregarOperador('*')">×</button>
+        <button class="funcion" onclick="agregarFuncion('1/')">1/x</button>
+
+        <!-- Fila 8 -->
+        <button class="numero" onclick="agregarNumero('1')">1</button>
+        <button class="numero" onclick="agregarNumero('2')">2</button>
+        <button class="numero" onclick="agregarNumero('3')">3</button>
+        <button class="operador" onclick="agregarOperador('-')">-</button>
+        <button class="funcion" onclick="agregarFuncion('Math.random()')">
+          Rand
+        </button>
+
+        <!-- Fila 9 -->
+        <button class="numero" onclick="agregarNumero('0')">0</button>
+        <button class="numero" onclick="agregarDecimal()">.</button>
+        <button class="limpiar" onclick="borrarUltimo()">⌫</button>
+        <button class="operador" onclick="agregarOperador('+')">+</button>
+        <button class="igual" onclick="calcular()">=</button>
+      </div>
+    </div>
+
+    <div class="historial" id="historial">
+      <button class="cerrar-historial" onclick="toggleHistorial()">×</button>
+      <h3>Historial</h3>
+      <div id="historial-contenido"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
