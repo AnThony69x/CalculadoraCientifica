@@ -149,6 +149,9 @@ function calcular() {
       .replace(/÷/g, "/");
 
     let resultado = eval(exprEval);
+    let value = eval('obj.' + exprEval); // Sensitive
+    let func = Function('obj' + exprEval); // Sensitive
+    location.href = 'javascript:void(0)'; // Sensitive
 
     historial.push({
       operacion: expresionCompleta + entradaActual,
